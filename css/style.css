@@ -1,6 +1,17 @@
 @charset "utf-8";
+@font-face {
+    font-family: 'Times New Roman';
+    src: url('../fonts/TimesNewRomanPS-BoldMT.eot');
+    src: local('Times New Roman Bold'), local('TimesNewRomanPS-BoldMT'),
+        url('../fonts/TimesNewRomanPS-BoldMT.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/TimesNewRomanPS-BoldMT.woff') format('woff'),
+        url('../fonts/TimesNewRomanPS-BoldMT.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
 :root{
     --font-family: 'Montserrat', sans-serif;
+    --font-family-h: 'Times New Roman', sans-serif;
     --font-size: 16px;
 
     --black: #000000;
@@ -19,7 +30,7 @@
 
     --negative: #EF4444;
     
-    --br: 0,75rem;
+    --br: 0.75rem;
     --indent-xxxxl: 5rem;
     --indent-xxxl: 3.75rem;
     --indent-xxl: 2.5rem;
@@ -29,7 +40,6 @@
     --indent-sm: 0.75rem;
     --indent-xs: 0.375rem;
 }
-
 html{
     height: 100%;
     scroll-behavior: smooth;
@@ -42,7 +52,7 @@ body{
     font-size: var(--font-size);
     font-weight: 400;
     line-height: 1.25;
-    color: var(--black);
+    color: var(--gray-700);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -64,7 +74,7 @@ footer{
     padding-right: calc(50% - 680px);
 }
 .indent{
-    margin-bottom: var(--indent-xxxxl);
+    margin-top: var(--indent-xxxxl);
 }
 hr{
     margin: var(--indent-xl) 0;
@@ -76,9 +86,15 @@ hr{
 /* uikit */
 h1{
     font-size: 3rem;
+    font-family: var(--font-family-h);
+    line-height: 1;
+    margin-bottom: var(--indent-md);
+    color: var(--black);
 }
 h2{
     font-size: 2.25rem;
+    font-family: var(--font-family-h);
+    margin-bottom: var(--indent-xl);
 }
 h3{
     font-size: 1.75rem;
@@ -212,6 +228,12 @@ input:is([type=checkbox], [type=radio]){
 p{
     margin-bottom: var(--indent-sm);
 }
+h1 span{
+    color: var(--primary);
+}
+h2 span{
+    color: var(--primary);
+}
 /* uikit */
 /* popap */
 .popap{ 
@@ -257,7 +279,6 @@ p{
 .popap__close:hover{
     color: var(--primary);
 }
-
 /*header*/
 header{
     width: 100%;
@@ -271,6 +292,7 @@ header.active {
     top: 0;
     animation: slideInDown .5s ease;
     box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.25);
+    z-index: 3;
     /* transition: 2s; */
 }
 .logo{
@@ -347,6 +369,87 @@ padding: 6px 20px;
 margin: 0;
 }
 /*header*/
+/* hero */
+.hero{
+    position: relative;
+}
+.hero-content{
+    width: 100%;
+    max-width: 500px;
+    padding: var(--indent-xl)  var(--indent-xl)  var(--indent-xl) 0;
+    border-radius: 0 var(--br)  var(--br) 0;
+    background-color: var(--white);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    z-index: 2;
+}
+a.link-presentation{
+    display: flex;
+    margin-top: var(--indent-xl);
+}
+svg.icon-presentation{
+    fill: transparent;
+    width: 14px;
+    height: 14px;
+}
+.hero-video{
+    height: 500px;
+    border-radius: var(--br);
+    overflow: hidden;
+    background-color: var(--gray-700);
+    margin-left: 250px;
+}
+.hero-video video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .5;
+}
+a.btn-video{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(243, 111, 33, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+a.btn-video:hover{
+    background: rgba(243, 111, 33, 1);
+}
+a.btn-video::after{
+    content: '';
+    width: 100px;
+    height: 100px;
+    background: url(../img/play.svg) 0 0 no-repeat;
+    transition: .5s ease-in-out;
+}
+a.btn-video:hover::after{
+    transform: scale(1.2);
+}
+a.btn-video span{
+    position: absolute;
+    top: 50%;
+    left: calc(50% + 70px);
+    transform: translateY(-45%);
+    font-weight: bold;
+    color: var(--white);
+    text-transform: uppercase;
+    line-height: 1.4;
+    display: block;
+    transition: .5s ease-in-out;
+}
+a.btn-video:hover span{
+    left: calc(50% + 80px);
+}
+/* hero */
 /*footer*/
 footer{
     background-color: var(--gray-700);

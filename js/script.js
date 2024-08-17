@@ -79,3 +79,6 @@ document.addEventListener('DOMContentLoaded', function () {
 let year = new Date().getFullYear()
   document.querySelector(".year").innerHTML = year;
 });
+Fancybox.bind("[data-fancybox]", {
+  // Your custom options
+});
