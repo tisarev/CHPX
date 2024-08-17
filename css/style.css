@@ -234,6 +234,39 @@ h1 span{
 h2 span{
     color: var(--primary);
 }
+.btn{
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    color: var(--gray-700);
+    min-height: 40px;
+    padding: 0 var(--indent-lg);
+    border-radius: var(--br);
+    border: 1px solid var(--gray-300);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--indent-md);
+    font-weight: bold;
+}
+ul.ul-list{
+    display: flex;
+    flex-direction: column;
+    gap: var(--indent-xs);
+}
+ul.ul-list li{
+    padding-left: var(--indent-lg);
+    position: relative;
+}
+ul.ul-list li::before{
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    position: absolute;
+    top: 8px;
+    left: 0;
+}
 /* uikit */
 /* popap */
 .popap{ 
@@ -385,9 +418,12 @@ margin: 0;
     left: 0;
     z-index: 2;
 }
-a.link-presentation{
-    display: flex;
-    margin-top: var(--indent-xl);
+.link-presentation{
+    margin-top: var(--indent-lg);
+}
+.link-presentation:hover{
+    border-color: var(--primary);
+    color: var(--primary);
 }
 svg.icon-presentation{
     fill: transparent;
@@ -450,6 +486,35 @@ a.btn-video:hover span{
     left: calc(50% + 80px);
 }
 /* hero */
+/* Основные направления деятельности */
+.home-areas-activity__list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--indent-lg);
+}
+.home-areas-activity__list-flex{
+    width: calc(50% - calc(var(--indent-lg) / 2));
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--indent-lg);
+}
+.home-areas-activity__item{
+    width: 100%;
+    border: 1px solid var(--gray-300);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--indent-xl);
+    padding: var(--indent-lg);
+    border-radius: var(--br);
+}
+.home-areas-activity__item-text b{
+    text-transform: uppercase;
+}
+.home-areas-activity__item-text ul{
+    padding-top: var(--indent-md);
+}
+/* Основные направления деятельности */
 /*footer*/
 footer{
     background-color: var(--gray-700);
