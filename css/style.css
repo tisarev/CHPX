@@ -21,7 +21,7 @@
     
     --br: 0,75rem;
     --indent-xxxxl: 5rem;
-    --indent-xxxl: 3,75rem;
+    --indent-xxxl: 3.75rem;
     --indent-xxl: 2.5rem;
     --indent-xl: 2rem;
     --indent-lg: 1.25rem;
@@ -64,14 +64,14 @@ footer{
     padding-right: calc(50% - 680px);
 }
 .indent{
-    margin-top: var(--indent-large);
+    margin-bottom: var(--indent-xxxxl);
 }
 hr{
-    margin: var(--indent-medium) 0;
+    margin: var(--indent-xl) 0;
 	padding: 0;
 	height: 0;
 	border: none;
-	border-top: 1px solid #ddd;
+	border-top: 1px solid var(--gray-300);
 }
 /* uikit */
 h1{
@@ -208,6 +208,9 @@ input:is([type=checkbox], [type=radio]){
     display: flex;
     flex-direction: column;
     gap: var(--indent-medium);
+}
+p{
+    margin-bottom: var(--indent-sm);
 }
 /* uikit */
 /* popap */
@@ -348,9 +351,14 @@ margin: 0;
 footer{
     background-color: var(--gray-700);
     color: var(--gray-400);
+    padding-top: var(--indent-xxxl);
+    padding-bottom: var(--indent-xxl);
 }
 footer a{
     color: var(--gray-400);
+}
+footer a:hover{
+    text-decoration: underline;
 }
 footer a:hover{
     color: var(--gray-200);
@@ -373,12 +381,17 @@ nav.footer-menu ul li{
 }
 nav.footer-menu ul li a{
     font-weight: bold;
+    font-size: 1rem;
 }
 nav.footer-menu ul li ul li a{
     font-weight: normal;
-}
-nav.footer-menu a{
     font-size: 0.875rem;
+}
+nav.footer-menu ul li ul li:last-child{
+    margin-bottom: var(--indent-sm);
+}
+nav.footer-menu ul li a{
+    margin-bottom: var(--indent-xs);
 }
 .footer-content{
     display: flex;
@@ -394,6 +407,9 @@ nav.footer-menu a{
 }
 .footer-company{
     max-width: 340px;
+}
+.footer-company img{
+    margin-bottom: var(--indent-xxl);
 }
 /*footer*/
 

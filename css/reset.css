@@ -12,7 +12,7 @@
 
 /* Links */
 
-a, a:link, a:visited  {
+a  {
     text-decoration: none;
 }
 
