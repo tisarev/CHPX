@@ -164,10 +164,21 @@
             </header>
         </div>
 <!--Шапка сайта--> 
-        <!-- <button class="popap__btn" data-path="popap">button</button>-->
+
 <!--Hero--> 
         <section class="container section indent" id="hero">
-            
+            <div class="hero-content">
+                <h1>Первый в нефтепромысловой химии</h1>
+                <p>Разрабатывает и внедряет химические продукты для процессов нефтедобычи с 1978 года.</p>
+                <a href="" class="link-presentation" target="_blank">Скачать презентацию</a>
+            </div>
+            <div class="hero-video">
+                <video class="slider__item-video" autoplay="autoplay" loop="loop" muted="" width="100%">
+                    <source src="./img/nii.mp4">
+                    <source src="./img/nii.webm">
+                </video>
+                <button class="popap__btn btn-video" data-path="video">Смотреть видео</button>
+            </div>
         </section>
 <!--Hero--> 
 <!-- Основные направления деятельности -->
@@ -175,25 +186,25 @@
             <div class="home-areas-activity">
                 <div class="home-areas-activity__list">
                     <div class="home-areas-activity__item">
-                        <img src="">
+                        <img src="./img/home-areas-1.svg">
                         <div class="home-areas-activity__item-text">
                             <b>Повышение нефтеотдачи пластов и опз скважин:</b> композиции и технологии  для повышения нефтеотдачи пластов и интенсификации добычи нефти.
                         </div>
                     </div>
                     <div class="home-areas-activity__item">
-                        <img src="">
+                        <img src="./img/home-areas-2.svg">
                         <div class="home-areas-activity__item-text">
                             <b>Лабораторные исследования и услуги по инженерному сопровождению.</b>
                         </div>
                     </div>
                     <div class="home-areas-activity__item">
-                        <img src="">
+                        <img src="./img/home-areas-3.svg">
                         <div class="home-areas-activity__item-text">
                             <b>Реализация приборов и лабораторного оборудования</b>
                         </div>
                     </div>
                     <div class="home-areas-activity__item">
-                        <img src="">
+                        <img src="./img/home-areas-4.svg">
                         <div class="home-areas-activity__item-text">
                             <b>Разработка, производство и внедрение химических продуктов для добычи, транспортировки и подготовки нефти:</b>
                             <ul class="ul-list">
@@ -612,10 +623,12 @@
 <!--Подвал сайта--> 
 <!-- popap -->
     <div class="popap">
-        <div class="form__block" data-popap="popap">
+        <div class="form__block" data-popap="video">
             <div class="popap__close">×</div>
             <div class="form__content">
-                <h2>Заголовок</h2>
+                <video class="fancybox__html5video" playsinline="" controls="" controlslist="nodownload" poster="" tabindex="0">
+                    <source src="./img/nii_full_video-v2.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
     </div>
