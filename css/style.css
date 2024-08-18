@@ -1,5 +1,15 @@
 @charset "utf-8";
 @font-face {
+	font-family: 'Times New Roman';
+	src: url('../fonts/TimesNewRomanPSMT.eot');
+	src: local('Times New Roman'), local('TimesNewRomanPSMT'),
+		url('../fonts/TimesNewRomanPSMT.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/TimesNewRomanPSMT.woff') format('woff'),
+		url('../fonts/TimesNewRomanPSMT.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
     font-family: 'Times New Roman';
     src: url('../fonts/TimesNewRomanPS-BoldMT.eot');
     src: local('Times New Roman Bold'), local('TimesNewRomanPS-BoldMT'),
@@ -70,8 +80,8 @@ footer{
     position: relative;
 }
 .container{
-    padding-left: calc(50% - 680px);
-    padding-right: calc(50% - 680px);
+    padding-left: calc(50% - 700px);
+    padding-right: calc(50% - 700px);
 }
 .indent{
     margin-top: var(--indent-xxxxl);
@@ -90,11 +100,14 @@ h1{
     line-height: 1;
     margin-bottom: var(--indent-md);
     color: var(--black);
+    font-weight: bold;
 }
 h2{
     font-size: 2.25rem;
     font-family: var(--font-family-h);
     margin-bottom: var(--indent-xl);
+    line-height: 1.1;
+    font-weight: bold;
 }
 h3{
     font-size: 1.75rem;
@@ -245,7 +258,6 @@ h2 span{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: var(--indent-md);
     font-weight: bold;
 }
 ul.ul-list{
@@ -266,6 +278,58 @@ ul.ul-list li::before{
     position: absolute;
     top: 8px;
     left: 0;
+}
+.btn-secondary{
+    border-color: var(--gray-300);
+    color: var(--gray-700);
+    margin-top: var(--indent-lg);
+    position: relative;
+    transition: .5s;
+}
+.btn-secondary:hover{
+    gap: var(--indent-md);
+    border-color: var(--primary);
+}
+.btn-secondary span{
+    overflow: hidden;
+    width: 0;
+    transition: .5s;
+}
+.btn-secondary:hover span{
+    width: auto;
+}
+.btn-secondary::after{
+    content: '';
+    width: 2px;
+    height: 30px;
+    background-color: var(--white);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -1px;
+    z-index: 1;
+    transition: .5s;
+}
+.btn-secondary::before{
+    content: '';
+    width: 2px;
+    height: 30px;
+    background-color: var(--white);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -1px;
+    z-index: 1;
+    transition: .5s;
+}
+.btn-secondary:hover::after{
+    height: 0;
+}
+.btn-secondary:hover::before{
+    height: 0;
+}
+.df{
+    display: flex;
 }
 /* uikit */
 /* popap */
@@ -420,6 +484,7 @@ margin: 0;
 }
 .link-presentation{
     margin-top: var(--indent-lg);
+    gap: var(--indent-md);
 }
 .link-presentation:hover{
     border-color: var(--primary);
@@ -515,6 +580,300 @@ a.btn-video:hover span{
     padding-top: var(--indent-md);
 }
 /* Основные направления деятельности */
+/* О компании */
+#home-company{
+    background-color: var(--gray-700);
+    color: var(--white);
+    padding-top: var(--indent-xxxxl);
+    padding-bottom: var(--indent-xxxxl);
+}
+#home-company h2 span{
+    color: var(--primary-medium);
+}
+.home-company{
+    display: flex;
+    align-items: flex-start;
+    gap: var(--indent-xxxxl);
+}
+.home-company__text{
+    width: 45%;
+}
+.home-company__numbers{
+    width: calc(55% - var(--indent-xxxxl));
+}
+.home-company__numbers ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem 5.625rem;
+}
+.home-company__numbers ul li{
+    display: flex;
+    flex-direction: column;
+}
+.home-company__numbers-big{
+    font-size: 5.625rem;
+    font-family: var(--font-family-h);
+    line-height: 1;
+    margin-bottom: var(--indent-xs);
+}
+.home-company__numbers-big span{
+    font-size: 2rem;
+}
+.home-company__numbers ul li p{
+    text-transform: uppercase;
+    font-size: 0.875rem;
+}
+.text-orange{
+    color: var(--primary-medium);
+}
+.home-company .btn-secondary{
+    border-color: var(--gray-600);
+    color: var(--white);
+    margin-top: var(--indent-lg);
+    position: relative;
+    transition: .5s;
+}
+.home-company .btn-secondary:hover{
+    gap: var(--indent-md);
+    border-color: var(--gray-500);
+}
+.home-company .btn-secondary span{
+    overflow: hidden;
+    width: 0;
+    transition: .5s;
+}
+.home-company .btn-secondary:hover span{
+    width: auto;
+}
+.home-company .btn-secondary::after{
+    content: '';
+    width: 2px;
+    height: 30px;
+    background-color: var(--gray-700);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -1px;
+    z-index: 1;
+    transition: .5s;
+}
+.home-company .btn-secondary::before{
+    content: '';
+    width: 2px;
+    height: 30px;
+    background-color: var(--gray-700);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -1px;
+    z-index: 1;
+    transition: .5s;
+}
+.home-company .btn-secondary:hover::after{
+    height: 0;
+}
+.home-company .btn-secondary:hover::before{
+    height: 0;
+}
+/* О компании */
+/* Производство и внедрение */
+.home-production{
+    display: flex;
+    align-items: flex-start;
+    gap: var(--indent-xxxxl);
+}
+.home-production__info{
+    width: 45%;
+}
+.home-production__list{
+    width: calc(55% - var(--indent-xxxxl));
+}
+.home-production__info-img{
+    width: 100%;
+    height: 350px;
+    position: relative;
+    margin-top: var(--indent-xl);
+    position: relative;
+}
+.home-production__info-img-item{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--br);
+    overflow: hidden;
+}
+.home-production__info-img-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.home-production__info-img__icon{
+    width: 160px;
+    height: 160px;
+    border-radius: 100%;
+    background-color: var(--gray-200);
+    box-shadow: 0 25px 50px 0 rgba(0, 0, 0, 0.25);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: var(--indent-xl);
+    left: var(--indent-xl);
+}
+.home-production__info-img__text{
+    width: 90%;
+    max-width: 300px;
+    text-align: center;
+    font-style: italic;
+    font-size: 0.875rem;
+    padding: 1rem;
+    border-radius: var(--br);
+    border-bottom: 3px solid var(--primary);
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.04), 0 20px 25px 0 rgba(0, 0, 0, 0.1);
+    text-wrap: balance;
+    margin: -40px auto 0;
+    background-color: var(--white);
+    position: relative;
+    z-index: 1;
+}
+.home-production__list{
+    display: flex;
+    flex-direction: column;
+}
+.home-production__item{
+    padding: var(--indent-sm) 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--gray-300);
+}
+.home-production__item:last-child{
+    border-bottom: none;
+}
+.home-production__item-title{
+    width: 270px;
+}
+.home-production__item-content{
+    width: calc(100% - 290px);
+}
+.home-production__item-content a{
+    color: var(--gray-700);
+    font-weight: bold;
+    text-decoration: underline;
+}
+.home-production__item-content a:hover{
+    color: var(--primary);
+    text-decoration: none;
+}
+/* Производство и внедрение */
+/* Технологии */
+.home-technologies{
+    background: var(--gray-700) url(../img/technologies-item.svg) bottom left no-repeat;
+    color: var(--white);
+    border-radius: var(--br);
+    padding: var(--indent-xxxl);
+    display: flex;
+    gap: var(--indent-xxxxl);
+    position: relative;
+}
+.home-technologies__info{
+    width: 45%;
+}
+
+.home-technologies__list{
+    width: calc(55% - var(--indent-xxxxl));
+}
+.home-technologies__list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: var(--indent-xs);
+}
+.home-technologies__item a{
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    border-radius: var(--br);
+    padding: var(--indent-lg);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--gray-700);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.home-technologies__item a:hover{
+    background-color: var(--primary);
+    color: var(--white);
+}
+.home-technologies__item-arrow{
+    margin-top: var(--indent-md);
+    transition: .2s;
+    width: 16px;
+    height: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='12' viewBox='0 0 16 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.5303 6.53033C15.8232 6.23744 15.8232 5.76256 15.5303 5.46967L10.7574 0.696699C10.4645 0.403806 9.98959 0.403806 9.6967 0.696699C9.40381 0.989593 9.40381 1.46447 9.6967 1.75736L13.9393 6L9.6967 10.2426C9.40381 10.5355 9.40381 11.0104 9.6967 11.3033C9.98959 11.5962 10.4645 11.5962 10.7574 11.3033L15.5303 6.53033ZM0 6.75H15V5.25H0V6.75Z' fill='%23F36F21'/%3E%3C/svg%3E%0A");
+}
+.home-technologies__item a:hover .home-technologies__item-arrow{
+    width: 52px;
+    background-image: url("data:image/svg+xml,%3Csvg width='52' height='12' viewBox='0 0 52 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50.8638 6.53033C51.1567 6.23744 51.1567 5.76256 50.8638 5.46967L46.0909 0.696699C45.798 0.403806 45.3231 0.403806 45.0302 0.696699C44.7373 0.989593 44.7373 1.46447 45.0302 1.75736L49.2728 6L45.0302 10.2426C44.7373 10.5355 44.7373 11.0104 45.0302 11.3033C45.3231 11.5962 45.798 11.5962 46.0909 11.3033L50.8638 6.53033ZM0.333496 6.75H50.3335V5.25H0.333496V6.75Z' fill='white'/%3E%3C/svg%3E ");
+}
+/* Технологии */
+/* Сервисные услуги */
+#home-services{
+    background: linear-gradient(180deg, #fff 0%, #f0f0f0 100%);
+    padding-bottom: var(--indent-xxxxl);
+}
+#home-services .df{
+    align-items: center;
+    gap: var(--indent-lg);
+    margin-bottom: var(--indent-xl);
+}
+#home-services .btn-secondary{
+    margin-top: 0;
+}
+#home-services h2{
+    margin-bottom: 0;
+}
+ol.home-services__list{
+    list-style-type: none; 
+	counter-reset: num;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--indent-md);
+}
+ol.home-services__list li{
+    position: relative;
+    padding: 0.5rem 1rem;
+    border-radius: var(--br);
+    border-bottom: 3px solid var(--primary);
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.04), 0 20px 25px 0 rgba(0, 0, 0, 0.1);
+    text-wrap: balance;
+    background-color: var(--white);
+    transition: .5s;
+}
+ol.home-services__list li::before{
+    position: relative;
+    content: counter(num); 
+	counter-increment: num;
+    font-size: 5rem;
+    display: block;
+    font-weight: 900;
+    font-family: var(--font-family-h);
+    -webkit-text-stroke: 1px var(--primary);
+    -webkit-text-fill-color: var(--white);
+    line-height: 1;
+    transition: .5s;
+}
+ol.home-services__list li:hover::before{
+    -webkit-text-fill-color: var(--primary);
+}
+ol.home-services__list li b{
+    margin-bottom: var(--indent-xs);
+    display: inline-block;
+}
+ol.home-services__list li p{
+    font-size: 0.875rem;
+}
+/* Сервисные услуги */
 /*footer*/
 footer{
     background-color: var(--gray-700);
