@@ -82,3 +82,20 @@ let year = new Date().getFullYear()
 Fancybox.bind("[data-fancybox]", {
   // Your custom options
 });
+//scroll
+function onEntry(entry) {
+  entry.forEach(change => {
+    if (change.isIntersecting) {
+     change.target.classList.add('element-show');
+    }
+  });
+}
+
+let options = {
+  threshold: [0.5] };
+let observer2 = new IntersectionObserver(onEntry, options);
+let elements = document.querySelectorAll('.element-animation');
+
+for (let elm of elements) {
+  observer2.observe(elm);
+}
